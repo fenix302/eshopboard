@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+	<context:component-scan base-package="work.." />
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="suffix" value=".jsp"/>
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</bean>
+
+	 <bean id="dataSource"  class="org.apache.commons.dbcp.BasicDataSource"
+	 			destroy-method="close"
+	 			p:driverClassName="oracle.jdbc.driver.OracleDriver"
+	 			p:url="jdbc:oracle:thin:@localhost:1521:orcl"
+	 			p:username="eshop"
+	 			p:password="eshop"
+	 			p:maxActive="10" />
+
+	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
+	  	p:dataSource-ref="dataSource"  p:configLocation="classpath:conf/SqlMapConfig.xml"/>
+
+	 <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+	 	<constructor-arg ref="sqlSessionFactory"></constructor-arg>
+	 </bean>
+
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+	   <property name="alwaysUseFullPath" value="true"/>
+	   <property name="order" value="0" />
+	</bean>
+
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+		    <list>
+		  	 	<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+		    </list>
+		</property>
+	</bean>
+	
+	<mybatis-spring:scan base-package="work.notice"/>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="work.user.UserBean" alias="user"/>
+		<typeAlias type="work.product.ProductBean" alias="product"/>
+		<typeAlias type="work.mark.MarkBean" alias="mark"/>
+		<typeAlias type="work.sell.SellBean" alias="sell"/>
+		<typeAlias type="work.cart.CartBean" alias="cart"/>
+		<typeAlias type="work.reply.ReplyBean" alias="reply"/>
+		<typeAlias type="work.code.CodeBean" alias="code"/>
+<!-- 		<typeAlias type="work.notice.BoardVO" alias="notice"/> -->
+		
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="conf/sql-user.xml" />
+		<mapper resource="conf/sql-product.xml" />
+		<mapper resource="conf/sql-mark.xml" />
+		<mapper resource="conf/sql-sell.xml" />
+		<mapper resource="conf/sql-cart.xml" />
+		<mapper resource="conf/sql-reply.xml" />
+		<mapper resource="conf/sql-code.xml" />
+<!-- 		<mapper resource="conf/sql-notice.xml" /> -->
+	</mappers>
+</configuration>
