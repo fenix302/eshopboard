@@ -23,6 +23,6 @@
 	</bean>
 	
 <!-- 	<context:component-scan base-package="work.notice" /> -->
-<!-- 	<mybatis-spring:scan base-package="work.notice"/> -->
+	<mybatis-spring:scan base-package="work.notice"/>
 
 </beans>

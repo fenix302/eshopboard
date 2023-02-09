@@ -49,7 +49,7 @@
 		</property>
 	</bean>
 	
-	<mybatis-spring:scan base-package="work.notice"/>
+	<mybatis-spring:scan base-package="work.."/>
 
 </beans>
 

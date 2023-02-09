@@ -2,6 +2,7 @@ package work.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
@@ -23,10 +24,10 @@ import work.notice.Criteria;
 public class BoardServiceImpl implements BoardService{
 
 	// 아래와 같이 @Autowired를 직접 설정해 줄 수도 있고, Setter를 이용해서 처리할 수도 있지만
-	// @Setter(onMethod_ = @Autowired)
 	// 스프링 4.3부터는 단일 파라미터를 받는 생성자의 경우에는 필요한 파라미터를 자동으로 주입할 수 있습니다.
 	// 위에서 @AllArgsConstructor는 모든 파라미터를 이용하는 생성자를 만들기 때문에
 	// 실제 코드는 BoardMapper를 주입받는 생성자가 만들어지게 됩니다.
+	@Autowired
 	private BoardMapper mapper;
 
 	@Override

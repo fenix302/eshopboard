@@ -40,10 +40,10 @@ a{
 			<ul class="nav navbar-nav navbar-right">
 				<li>
 					<c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
-						<a href="${context}/work/notice/list.do"><font color="white"><strong>공지사항</strong></font></a>
+						<a href="${context}/notice/list.jsp"><font color="white"><strong>공지사항</strong></font></a>
 					</c:if>
 					<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
-						<a href="${context}/work/notice/list.do"><font color="white"><strong>공지사항</strong></font></a>
+						<a href="${context}/notice/list.jsp"><font color="white"><strong>공지사항</strong></font></a>
 					</c:if>
 				</li>
 				<li>

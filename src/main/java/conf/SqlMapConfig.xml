@@ -11,7 +11,7 @@
 		<typeAlias type="work.cart.CartBean" alias="cart"/>
 		<typeAlias type="work.reply.ReplyBean" alias="reply"/>
 		<typeAlias type="work.code.CodeBean" alias="code"/>
-<!-- 		<typeAlias type="work.notice.BoardVO" alias="notice"/> -->
+		<typeAlias type="work.notice.BoardVO" alias="notice"/>
 		
 	</typeAliases>
 
@@ -23,6 +23,6 @@
 		<mapper resource="conf/sql-cart.xml" />
 		<mapper resource="conf/sql-reply.xml" />
 		<mapper resource="conf/sql-code.xml" />
-<!-- 		<mapper resource="conf/sql-notice.xml" /> -->
+		<mapper resource="conf/BoardMapper.xml" />
 	</mappers>
 </configuration>

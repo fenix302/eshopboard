@@ -34,6 +34,7 @@
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 
 	</properties>
+	
 		 <dependencies>
 		 
 		 		<!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
